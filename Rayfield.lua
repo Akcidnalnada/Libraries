@@ -123,11 +123,11 @@ if gethui then
 	Rayfield.Parent = gethui()
 elseif syn.protect_gui then 
 	syn.protect_gui(Rayfield)
-	Rayfield.Parent = CoreGui
+	Rayfield.Parent = Players.LocalPlayer.PlayerGui
 elseif CoreGui:FindFirstChild("RobloxGui") then
-	Rayfield.Parent = CoreGui:FindFirstChild("RobloxGui")
+	Rayfield.Parent = Players.LocalPlayer.PlayerGui
 else
-	Rayfield.Parent = CoreGui
+	Rayfield.Parent = Players.LocalPlayer.PlayerGui
 end
 
 if gethui then
@@ -138,7 +138,7 @@ if gethui then
 		end
 	end
 else
-	for _, Interface in ipairs(CoreGui:GetChildren()) do
+	for _, Interface in ipairs(Players.LocalPlayer.PlayerGui:GetChildren()) do
 		if Interface.Name == Rayfield.Name and Interface ~= Rayfield then
 			Interface.Enabled = false
 			Interface.Name = "Rayfield-Old"
